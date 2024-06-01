@@ -1,0 +1,320 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url("../static/Raleway-VariableFont_wght.ttf") format('truetype');
+  
+    font-weight: normal;
+    font-style: normal;
+  }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  background-color: #FFFFFF;
+}
+.center .parent {
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    margin-top: 10px;
+  }
+ .parent #login-picture
+{
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+	border-radius:100%;
+	margin-top:10px;
+	height:7em;
+  align-self: center;
+  position: relative;
+  display: flex;
+  opacity: 1;
+	-webkit-transition:opacity .5s ease-in-out;
+    cursor: pointer;
+}
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.container:hover .top:before, .container:hover .top:after, .container:hover .bottom:before, .container:hover .bottom:after, .container:active .top:before, .container:active .top:after, .container:active .bottom:before, .container:active .bottom:after {
+  margin-left: 200px;
+  transform-origin: -200px 50%;
+  transition-delay: 0s;
+}
+.container:hover .center, .container:active .center {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.top:before, .top:after, .bottom:before, .bottom:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 200vmax;
+  height: 200vmax;
+  top: 50%;
+  left: 50%;
+  margin-top: -100vmax;
+  transform-origin: 0 50%;
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  z-index: 10;
+  opacity: 0.65;
+  transition-delay: 0.2s;
+}
+
+.top:before {
+  transform: rotate(45deg);
+  background: #e46569;
+}
+.top:after {
+  transform: rotate(135deg);
+  background: #ecaf81;
+}
+
+.bottom:before {
+  transform: rotate(-45deg);
+  background: #60b8d4;
+}
+.bottom:after {
+  transform: rotate(-135deg);
+  background: #3745b5;
+}
+
+.center {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.445, 0.05, 0, 1);
+  transition-delay: 0s;
+
+  color: #333;
+}
+.center input {
+
+  width: 100%;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 1px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  background: #FFFFFF;
+}
+
+  .form_container.active .user_form {
+    display: none;
+  }
+.form_container{
+  
+  
+  position: fixed;
+   max-width: 320px;
+   width: 100%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) scale(1.2);
+   
+   background: #fff;
+   padding: 25px;
+   border-radius: 12px;
+   box-shadow: rgba(0, 0, 0, 0.1);
+   opacity: 0;
+   pointer-events: auto;
+   transition: all 0.4s ease-out;
+  }
+ .form_container.show{
+opacity: 1;
+z-index: 25 !important;
+ }
+  .form_container a {
+    color: #7d2ae8;
+    font-size: 12px;
+    opacity: 1;
+  }
+  .form_container a:hover{
+    text-decoration: underline;
+    opacity: 0;
+  }
+
+  .form_container .button {
+    background: #7d2ae8;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  .form_close {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    color: #0b0217;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  .home {
+    position: relative;
+    height: 100%;
+    width: 100%;
+   /* background-image: url("../bg.jpg");*/
+    background-size: cover;
+    background-position: center;
+  }
+  .home::before {
+    content: "";
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+    filter: brightness(100%);
+  }
+  .home.show::before {
+    z-index: 20;
+    opacity: 1;
+    pointer-events: auto;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  
+  }
+  #login-picture
+{
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+	border-radius:100%;
+	margin-top:10px;
+	height:7em;
+  align-self: center;
+  position: relative;
+  display: flex;
+	-webkit-transition:opacity .5s ease-in-out;
+}
+  .user-picture
+  {
+      -webkit-user-drag: none;
+      -khtml-user-drag: none;
+      -moz-user-drag: none;
+      -o-user-drag: none;
+      user-drag: none;
+      border-radius:100%;
+      margin-top:40px;
+      height:7em;
+    align-self: center;
+    position: relative;
+    display: flex;
+      -webkit-transition:opacity .5s ease-in-out;
+  }
+  .user-picture:hover
+{
+  cursor:pointer;
+	box-shadow: 0 1px 1px rgba(0,0,0,.1);
+}
+
+.user-picture:active
+{
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.3);
+}
+.select-menu {
+  position: absolute;
+  top: 65%;
+
+  max-width: 370px;
+  margin: 50px auto;
+  z-index: 150;
+}
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background: #fff;
+  color: #000000;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.select-menu .options {
+  position: relative;
+
+  width: 330px;
+  overflow-y: auto;
+  max-height: 295px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-duration: 0.35s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.35s;
+  -webkit-animation-fill-mode: both;
+}
+.select-menu .options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+.select-menu .options .option:hover {
+  background: #f2f2f2;
+}
+.select-menu .options .option i {
+  font-size: 25px;
+  margin-right: 12px;
+}
+.select-menu .options .option .option-text {
+  font-size: 18px;
+  color: #333;
+}
+
+.select-btn i {
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+.select-menu.active .options {
+  display: block;
+  opacity: 0;
+  z-index: 10;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+}
+.uil--multiply{content: url("../static/icons/uil--multiply.png"); width: 3vh; height: 3vh; cursor: pointer; position: absolute; right: 15px;margin: -5px;}

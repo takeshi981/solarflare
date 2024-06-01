@@ -1,0 +1,6 @@
+[theme]
+name=solarflare
+description=Solar Flare Theme
+engine=web-greeter
+url=index.html
+session=bspwm
