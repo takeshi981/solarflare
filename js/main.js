@@ -39,7 +39,7 @@ function display_user_picture(current_user){
             document.getElementById("login-picture").style.opacity = 1;
           });
         }, 350);
-        user.value = lightdm.users[current_user].display_name;
+        user.value = lightdm.users[current_user].username;
 
 
         
@@ -66,7 +66,7 @@ function display_user_picture(current_user){
               <td>
               <img class="user-picture" draggable="false" src="static/profile.png" onerror="this.onerror=null; this.src='static/profile.png'" type="img-button">
               </td>
-              <td><span class="user-name">${lightdm.users[i].name}</span></td>
+              <td><span class="user-name">${lightdm.users[i].username}</span></td>
               </tr>
               `;
               userForm.appendChild(userEntry);
@@ -75,7 +75,7 @@ function display_user_picture(current_user){
               const userPictures = document.getElementsByClassName("user-picture");
               const userNames = document.getElementsByClassName("user-name");
               userPictures[i].src = lightdm.users[i].image;
-              userNames[i].textContent = lightdm.users[i].display_name;
+              userNames[i].textContent = lightdm.users[i].username;
 
               // Add click event listener
               userPictures[i].addEventListener('click', function() {
@@ -95,7 +95,7 @@ function select_user(i){
     formContainer.classList.remove("show");
     (document.getElementById("login-picture").src = lightdm.users[i].image || "static/profile.png");
 
-    user.value = lightdm.users[i].display_name;
+    user.value = lightdm.users[i].username;
     
     current_user = i;
 
